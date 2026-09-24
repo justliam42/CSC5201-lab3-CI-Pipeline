@@ -14,11 +14,11 @@ steps:
 
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-central1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/<CONTAINER>:${SHORT_SHA}', '.']
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/hello:${SHORT_SHA}', '.']
 
   # Docker push to Google Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-central1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/<CONTAINER>:${SHORT_SHA}']
+    args: ['push', 'us-central1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/hello:${SHORT_SHA}']
   # Save test logs to Google Cloud Storage
 
 options:
@@ -32,4 +32,4 @@ artifacts:
 
 # Store images in Google Artifact Registry
 images:
-- <REGION>-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/<CONTAINER>:${SHORT_SHA}
+- us-central1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/hello:${SHORT_SHA}
