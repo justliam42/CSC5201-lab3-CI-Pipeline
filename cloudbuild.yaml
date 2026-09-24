@@ -1,6 +1,9 @@
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
+substitutions:
+  _ARTIFACT_REGISTRY_REPO: 'hello'
+
 steps:
   # Install dependencies
   - name: python
