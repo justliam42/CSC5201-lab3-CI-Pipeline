@@ -21,6 +21,9 @@ steps:
     args: ['push', 'us-central1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/<CONTAINER>:${SHORT_SHA}']
   # Save test logs to Google Cloud Storage
 
+options:
+  logging: CLOUD_LOGGING_ONLY
+
 artifacts:
   objects:
     location: gs://${_BUCKET_NAME}/
